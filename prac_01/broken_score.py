@@ -8,3 +8,4 @@ elif score <= 90:
     print(f"Passable")
 else:
     print(f"Excellent")
+print("hello")
