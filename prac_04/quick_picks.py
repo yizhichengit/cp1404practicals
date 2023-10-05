@@ -19,8 +19,11 @@ def main():
     num_quick_picks = int(input("How many quick picks? "))
     for _ in range(num_quick_picks):
         quick_pick = generate_quick_pick()
-        print(" ".join(map(str, quick_pick)))
+        # Use string formatting to align the numbers
+        formatted_quick_pick = " ".join(["{:2}".format(number) for number in quick_pick])
+        print(formatted_quick_pick)
 
 if __name__ == "__main__":
     main()
+
 
