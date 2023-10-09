@@ -14,7 +14,7 @@ ALL_CAPS = {
 
 
 # Function to get color code by name (case-insensitive)
-def get_color_code(color_name):
+def  get_color_code(color_name):
     return ALL_CAPS.get(color_name.capitalize(), "Color not found")
 
 

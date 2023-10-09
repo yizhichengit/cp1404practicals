@@ -31,7 +31,7 @@ def word_count(text):
 
 
 # Get input text from the user
-user_input = input("Enter a string: ")
+user_input  = input("Enter a string: ")
 
 # Call the word_count function with the input text
 word_count(user_input)

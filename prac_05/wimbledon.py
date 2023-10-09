@@ -1,4 +1,4 @@
-import csv
+import  csv
 
 def read_csv(filename):
     champions = {}  # Dictionary to store champions and their wins

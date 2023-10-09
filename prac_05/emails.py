@@ -1,5 +1,5 @@
 def extract_name(email):
-    
+
     parts = email.split('@')
     name = parts[0].replace('.', ' ').title()
     return name
