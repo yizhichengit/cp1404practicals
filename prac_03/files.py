@@ -1,11 +1,9 @@
 # Task 1: Write the user's name to "name.txt"
 user_name = input("Enter your name: ")
 
-# Open "name.txt" in write mode and write the user's name to it
 with open("name.txt", "w") as file:
     file.write(user_name)
 
-# The file will be automatically closed when the "with" block exits
 # Task 2: Read and print the name from "name.txt"
 with open("name.txt", "r") as file:
     stored_name = file.read()
