@@ -1,18 +1,24 @@
 from taxi import Taxi
 
 class SilverServiceTaxi(Taxi):
-    flagfall = 4.50  # Additional charge for each new fare
+    flagfall = 4.50
 
     def __init__(self, name, fuel, fanciness):
-        """Initialise a SilverServiceTaxi instance, based on the Taxi class."""
         super().__init__(name, fuel)
         self.fanciness = fanciness
-        self.price_per_km *= fanciness  # Adjust price per km by the fanciness level
+
+        self.price_per_km = Taxi.price_per_km * self.fanciness
 
     def get_fare(self):
-        """Calculate the fare, including the flagfall and per km cost."""
+        """Calculate the total fare including the flagfall."""
+
+
         return super().get_fare() + SilverServiceTaxi.flagfall
 
     def __str__(self):
-        """Return a string representation of the SilverServiceTaxi, including flagfall."""
-        return f"{super().__str__()} plus flagfall of ${self.flagfall:.2f}"
+        """返回 SilverServiceTaxi 的字符串表示，包括起步费。"""
+        # 基础每公里车费存储在类变量中
+        base_fare = Taxi.price_per_km
+        # 实际每公里车费包括豪华程度乘数
+        actual_fare = base_fare * self.fanciness
+        return f"{self.name}, fuel={self.fuel}, odometer={self.odometer}, {self.current_fare_distance}km on current fare, ${actual_fare:.2f}/km plus flagfall of ${self.flagfall:.2f}"
